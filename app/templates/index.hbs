@@ -1,0 +1,9 @@
+{{page-title 'Index'}}
+<ul>
+  {{#each @model as |post|}}
+    <li>
+      {{post.title}}
+    </li>
+  {{/each}}
+</ul>
+{{outlet}}
