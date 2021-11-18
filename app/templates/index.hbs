@@ -2,7 +2,9 @@
 <ul>
   {{#each @model as |post|}}
     <li>
-      {{post.title}}
+      <LinkTo @route="post" @model={{post.id}}>
+        {{post.title}}
+      </LinkTo>
     </li>
   {{/each}}
 </ul>

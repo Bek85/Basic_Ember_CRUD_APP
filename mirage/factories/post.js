@@ -3,9 +3,9 @@ import faker from 'faker';
 
 export default Factory.extend({
   title(idx) {
-    return `Post Title ${idx}`;
+    return `Post Title ${idx + 1}`;
   },
   body() {
-    return faker.random.words();
+    return faker.lorem.sentence();
   },
 });
