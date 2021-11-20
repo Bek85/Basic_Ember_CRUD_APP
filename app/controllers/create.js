@@ -7,16 +7,15 @@ export default class CreateController extends Controller {
   @service store;
 
   @action
-  createPost(evt) {
+  async createPost(evt) {
     evt.preventDefault();
     let post = this.store.createRecord('post', {
       title: this.title,
       body: this.body,
     });
 
-    post.save().then(() => {
-      // this.router.transitionTo('index');
-      this.router.transitionTo('post', post.id);
-    });
+    await post.save();
+    // this.router.transitionTo('index');
+    this.router.transitionTo('post', post.id);
   }
 }
