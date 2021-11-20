@@ -3,12 +3,14 @@ import { action } from '@ember/object';
 import { inject as service } from '@ember/service';
 
 export default class EditController extends Controller {
-  @service store;
+  @service router;
 
   @action
-  editPost(evt) {
+  async editPost(evt) {
     evt.preventDefault();
     let post = this.model;
-    post.save();
+    await post.save();
+    // this.router.transitionTo('index');
+    this.router.transitionTo('post', post.id);
   }
 }
