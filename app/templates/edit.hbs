@@ -1,5 +1,5 @@
 {{page-title 'Edit'}}
-<form {{on 'submit' this.editPost}}>
+<form {{on 'submit' (fn this.editPost this.model)}}>
   <div>
     <label for="title">
       Title

@@ -6,9 +6,9 @@ export default class EditController extends Controller {
   @service router;
 
   @action
-  async editPost(evt) {
+  async editPost(post, evt) {
     evt.preventDefault();
-    let post = this.model;
+    // let post = this.model;
     await post.save();
     // this.router.transitionTo('index');
     this.router.transitionTo('post', post.id);
