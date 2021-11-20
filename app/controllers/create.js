@@ -9,14 +9,13 @@ export default class CreateController extends Controller {
   @action
   createPost(evt) {
     evt.preventDefault();
-    console.log(this.title, this.body);
     let post = this.store.createRecord('post', {
       title: this.title,
       body: this.body,
     });
 
     post.save().then(() => {
-      // this.transitionToRoute('index);
+      // this.router.transitionTo('index');
       this.router.transitionTo('post', post.id);
     });
   }
