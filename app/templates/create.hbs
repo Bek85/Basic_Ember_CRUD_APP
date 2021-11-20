@@ -1,2 +1,19 @@
-{{page-title "Create"}}
+{{page-title 'Create'}}
+<form {{on 'submit' this.createPost}}>
+  <div>
+    <label for="title">
+      Title
+    </label>
+    <Input @type="type" id="title" @value={{this.title}} />
+  </div>
+  <div>
+    <label for="body">
+      Post
+    </label>
+    <Textarea id="body" rows="8" cols="80" @value={{this.body}} />
+  </div>
+  <button type="submit" data-test="publish">
+    Publish
+  </button>
+</form>
 {{outlet}}

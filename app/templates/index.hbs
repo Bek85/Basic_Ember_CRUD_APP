@@ -1,11 +1,21 @@
 {{page-title 'Index'}}
 <ul>
   {{#each @model as |post|}}
-    <li>
+    <li data-test="post">
       <LinkTo @route="post" @model={{post.id}}>
         {{post.title}}
       </LinkTo>
     </li>
+    <button
+      type="button"
+      data-test="delete-post"
+      {{on 'click' (fn this.deletePost post)}}
+    >
+      Delete
+    </button>
+    <LinkTo @route="edit" @model={{post.id}}>
+      Edit
+    </LinkTo>
   {{/each}}
 </ul>
 {{outlet}}

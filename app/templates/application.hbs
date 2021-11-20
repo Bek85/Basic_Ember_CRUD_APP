@@ -1,5 +1,16 @@
 {{page-title 'EmberCRUDAPP'}}
-<h1>
-  Ember CRUD App
-</h1>
+<nav>
+  <ul>
+    <li>
+      <LinkTo @route="index">
+        Home
+      </LinkTo>
+    </li>
+    <li>
+      <LinkTo @route="create">
+        Write a post
+      </LinkTo>
+    </li>
+  </ul>
+</nav>
 {{outlet}}
